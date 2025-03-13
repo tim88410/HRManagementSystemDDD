@@ -12,6 +12,7 @@ namespace HRManagementSystemDDD.Infrastructure
     {
         public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services)
         {
+            services.AddScoped<ILeaveActionLogRepository, LeaveActionLogRepository>();
             services.AddScoped<ILeavesQueryRepository, LeavesQueryRepository>();
             services.AddScoped<ILeaveAggregateRepository, LeaveAggregateRepository>();
             return services;

@@ -1,5 +1,6 @@
 using DBUtility;
 using HRManagementSystemDDD;
+using HRManagementSystemDDD.Application.Queries;
 using HRManagementSystemDDD.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,10 +22,12 @@ builder.Services.AddInfrastructureLayer();
 // µù¥U MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-
 //AutoMapper
 builder.Services.AddAutoMapper(
-    (serviceProvider, mapperConfiguration) => mapperConfiguration.AddProfiles(new AutoMapper.Profile[]{}),
+    (serviceProvider, mapperConfiguration) => mapperConfiguration.AddProfiles(new AutoMapper.Profile[]
+    {
+        new QueriesProfile()
+    }),
     AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
