@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.Events.Leave
+namespace HRManagementSystemDDD.Domain.Events.Leave
 {
     public class LeaveUpdateLeaveLimitHoursEvent : INotification
     {
@@ -14,8 +14,8 @@ namespace HRManagementSystem.Domain.Events.Leave
                                    double newLeaveLimitHours)
         {
             this.LeaveId = LeaveId;
-            this.OldLeaveLimitHours = oldLeaveLimitHours;
-            this.NewLeaveLimitHours = newLeaveLimitHours;
+            OldLeaveLimitHours = oldLeaveLimitHours;
+            NewLeaveLimitHours = newLeaveLimitHours;
         }
         public int LeaveId { get; set; }
         public double OldLeaveLimitHours { get; set; }

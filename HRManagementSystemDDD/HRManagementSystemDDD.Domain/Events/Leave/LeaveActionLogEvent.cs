@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.Events.Leave
+namespace HRManagementSystemDDD.Domain.Events.Leave
 {
     public class LeaveActionLogEvent : INotification
     {

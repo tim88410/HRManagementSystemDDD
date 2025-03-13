@@ -1,8 +1,8 @@
-﻿using HRManagementSystem.Domain.Events.Leave;
-using HRManagementSystem.Domain.SeedWork;
-using static HRManagementSystem.Domain.SeedWork.DomainError;
+﻿using HRManagementSystemDDD.Domain.Events.Leave;
+using HRManagementSystemDDD.Domain.SeedWork;
+using static HRManagementSystemDDD.Domain.SeedWork.DomainError;
 
-namespace HRManagementSystem.Domain.AggregatesModel.LeaveAggregate
+namespace HRManagementSystemDDD.Domain.AggregatesModel.LeaveAggregate
 {
     public class Leave : Entity, IAggregateRoot
     {

@@ -1,4 +1,4 @@
-﻿using HRManagementSystem.Infrastructure.Repositories.Leaves;
+﻿using HRManagementSystemDDD.Infrastructure.Repositories.Leaves;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Infrastructure
+namespace HRManagementSystemDDD.Infrastructure
 {
     public static class DependencyInjectionSetup
     {

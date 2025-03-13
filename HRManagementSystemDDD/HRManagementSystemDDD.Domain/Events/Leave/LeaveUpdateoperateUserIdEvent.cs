@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.Events.Leave
+namespace HRManagementSystemDDD.Domain.Events.Leave
 {
     public class LeaveUpdateoperateUserIdEvent : INotification
     {
@@ -14,8 +14,8 @@ namespace HRManagementSystem.Domain.Events.Leave
                                    int newOperateUserId)
         {
             this.LeaveId = LeaveId;
-            this.OldOperateUserId = oldOperateUserId;
-            this.NewOperateUserId = newOperateUserId;
+            OldOperateUserId = oldOperateUserId;
+            NewOperateUserId = newOperateUserId;
         }
         public int LeaveId { get; set; }
         public int OldOperateUserId { get; set; }

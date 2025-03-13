@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystemDDD", "HR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystem.Infrastructure", "HRManagementSystem.Infrastructure\HRManagementSystem.Infrastructure.csproj", "{5ED465E7-2E5A-4C0A-A194-D460FC1EFABB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystemDDD.Domain", "HRManagementSystemDDD.Domain\HRManagementSystemDDD.Domain.csproj", "{389AF00C-CFAA-4AB9-9A36-E062A14ACD91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystem.Domain", "HRManagementSystem.Domain\HRManagementSystem.Domain.csproj", "{B948EE5B-76C6-476F-B220-D04FFCEE408C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystemDDD.Infrastructure", "HRManagementSystemDDD.Infrastructure\HRManagementSystemDDD.Infrastructure.csproj", "{CED11771-F568-7FC5-B916-660BCBA6715C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5ED465E7-2E5A-4C0A-A194-D460FC1EFABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5ED465E7-2E5A-4C0A-A194-D460FC1EFABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5ED465E7-2E5A-4C0A-A194-D460FC1EFABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5ED465E7-2E5A-4C0A-A194-D460FC1EFABB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B948EE5B-76C6-476F-B220-D04FFCEE408C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B948EE5B-76C6-476F-B220-D04FFCEE408C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B948EE5B-76C6-476F-B220-D04FFCEE408C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B948EE5B-76C6-476F-B220-D04FFCEE408C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389AF00C-CFAA-4AB9-9A36-E062A14ACD91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389AF00C-CFAA-4AB9-9A36-E062A14ACD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389AF00C-CFAA-4AB9-9A36-E062A14ACD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389AF00C-CFAA-4AB9-9A36-E062A14ACD91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED11771-F568-7FC5-B916-660BCBA6715C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED11771-F568-7FC5-B916-660BCBA6715C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED11771-F568-7FC5-B916-660BCBA6715C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED11771-F568-7FC5-B916-660BCBA6715C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

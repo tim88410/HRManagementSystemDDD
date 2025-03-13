@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.SeedWork
+namespace HRManagementSystemDDD.Domain.SeedWork
 {
     public abstract class Entity
     {
@@ -44,7 +44,7 @@ namespace HRManagementSystem.Domain.SeedWork
 
         public bool IsTransient()
         {
-            return this.EntityId == default(Int32);
+            return EntityId == default;
         }
 
         public override bool Equals(object obj)
@@ -52,18 +52,18 @@ namespace HRManagementSystem.Domain.SeedWork
             if (obj == null || !(obj is Entity))
                 return false;
 
-            if (Object.ReferenceEquals(this, obj))
+            if (ReferenceEquals(this, obj))
                 return true;
 
-            if (this.GetType() != obj.GetType())
+            if (GetType() != obj.GetType())
                 return false;
 
             Entity item = (Entity)obj;
 
-            if (item.IsTransient() || this.IsTransient())
+            if (item.IsTransient() || IsTransient())
                 return false;
             else
-                return item.EntityId == this.EntityId;
+                return item.EntityId == EntityId;
         }
 
         public override int GetHashCode()
@@ -71,7 +71,7 @@ namespace HRManagementSystem.Domain.SeedWork
             if (!IsTransient())
             {
                 if (!_requestedHashCode.HasValue)
-                    _requestedHashCode = this.EntityId.GetHashCode() ^ 31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
+                    _requestedHashCode = EntityId.GetHashCode() ^ 31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
 
                 return _requestedHashCode.Value;
             }
@@ -81,8 +81,8 @@ namespace HRManagementSystem.Domain.SeedWork
         }
         public static bool operator ==(Entity left, Entity right)
         {
-            if (Object.Equals(left, null))
-                return (Object.Equals(right, null)) ? true : false;
+            if (Equals(left, null))
+                return Equals(right, null) ? true : false;
             else
                 return left.Equals(right);
         }

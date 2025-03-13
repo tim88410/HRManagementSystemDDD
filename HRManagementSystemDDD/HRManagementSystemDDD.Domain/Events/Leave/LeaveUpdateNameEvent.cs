@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.Events.Leave
+namespace HRManagementSystemDDD.Domain.Events.Leave
 {
     public class LeaveUpdateNameEvent : INotification
     {
@@ -14,8 +14,8 @@ namespace HRManagementSystem.Domain.Events.Leave
                                    string newName)
         {
             this.LeaveId = LeaveId;
-            this.OldName = oldName;
-            this.NewName = newName;
+            OldName = oldName;
+            NewName = newName;
         }
         public int LeaveId { get; set; }
         public string OldName { get; set; }

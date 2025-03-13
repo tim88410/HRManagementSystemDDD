@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Domain.SeedWork
+namespace HRManagementSystemDDD.Domain.SeedWork
 {
     public abstract class DomainError
     {

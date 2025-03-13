@@ -1,6 +1,7 @@
 ﻿using DBUtility;
-using HRManagementSystem.Domain.SeedWork;
-using HRManagementSystem.Infrastructure.Models.Leaves;
+using HRManagementSystemDDD.Domain.AggregatesModel.LeaveAggregate;
+using HRManagementSystemDDD.Domain.SeedWork;
+using HRManagementSystemDDD.Infrastructure.Models.Leaves;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,15 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Infrastructure.Repositories.Leaves
+namespace HRManagementSystemDDD.Infrastructure.Repositories.Leaves
 {
     public interface ILeavesQueryRepository
     {
         public Task<IEnumerable<LeavesQuery.LeavesDTO>> GetAsync(LeavesQuery.LeavesQueryParameter request);
 
-        public Task<IEnumerable<Domain.AggregatesModel.LeaveAggregate.Leave>> GetOneAsync(int Id);
+        public Task<IEnumerable<Leave>> GetOneAsync(int Id);
     }
-    public class LeavesQueryRepository : IRepository<Domain.AggregatesModel.LeaveAggregate.Leave>, ILeavesQueryRepository
+    public class LeavesQueryRepository : IRepository<Leave>, ILeavesQueryRepository
     {
 
         private readonly IDataBaseUtility dataBaseUtility;
@@ -91,7 +92,7 @@ ORDER BY
 
             return await dataBaseUtility.QueryAsync<LeavesQuery.LeavesDTO>(sql, sqlParams);
         }
-        public async Task<IEnumerable<Domain.AggregatesModel.LeaveAggregate.Leave>> GetOneAsync(int Id)
+        public async Task<IEnumerable<Leave>> GetOneAsync(int Id)
         {
             string sql = @"
 SELECT     
@@ -111,7 +112,7 @@ WHERE
                 new SqlParameter { ParameterName = "Id", Value = Id, SqlDbType = SqlDbType.Int }
             };
 
-            return await dataBaseUtility.QueryAsync<Domain.AggregatesModel.LeaveAggregate.Leave>(sql, sqlParams);
+            return await dataBaseUtility.QueryAsync<Leave>(sql, sqlParams);
         }
     }
 }

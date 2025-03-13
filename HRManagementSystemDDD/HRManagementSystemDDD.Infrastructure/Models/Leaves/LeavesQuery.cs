@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRManagementSystem.Infrastructure.Models.Leaves
+namespace HRManagementSystemDDD.Infrastructure.Models.Leaves
 {
     public class LeavesQuery
     {
@@ -69,25 +69,25 @@ namespace HRManagementSystem.Infrastructure.Models.Leaves
                 get
                 {
                     if (string.IsNullOrEmpty(SortColumn) ||
-                    !Enum.TryParse(SortColumn.Trim(), true, out LeavesQuery.SortColumn intSortBy) ||
-                    !Enum.IsDefined(typeof(LeavesQuery.SortColumn), intSortBy))
+                    !Enum.TryParse(SortColumn.Trim(), true, out SortColumn intSortBy) ||
+                    !Enum.IsDefined(typeof(SortColumn), intSortBy))
                     {
                         SortColumn = "Id";
                     }
                     else
                     {
-                        SortColumn = Enum.GetName(typeof(LeavesQuery.SortColumn), intSortBy);
+                        SortColumn = Enum.GetName(typeof(SortColumn), intSortBy);
                     }
 
                     if (string.IsNullOrEmpty(SortOrderBy) ||
-                        !Enum.TryParse(SortOrderBy.Trim(), true, out LeavesQuery.SortOrderBy intSortorderBy) ||
-                        !Enum.IsDefined(typeof(LeavesQuery.SortOrderBy), intSortorderBy))
+                        !Enum.TryParse(SortOrderBy.Trim(), true, out SortOrderBy intSortorderBy) ||
+                        !Enum.IsDefined(typeof(SortOrderBy), intSortorderBy))
                     {
-                        SortOrderBy = Enum.GetName(typeof(LeavesQuery.SortOrderBy), LeavesQuery.SortOrderBy.Asc);
+                        SortOrderBy = Enum.GetName(typeof(SortOrderBy), LeavesQuery.SortOrderBy.Asc);
                     }
                     else
                     {
-                        SortOrderBy = Enum.GetName(typeof(LeavesQuery.SortOrderBy), intSortorderBy);
+                        SortOrderBy = Enum.GetName(typeof(SortOrderBy), intSortorderBy);
                     }
 
                     return SortColumn + " " + SortOrderBy;
