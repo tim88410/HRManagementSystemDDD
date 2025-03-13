@@ -1,3 +1,7 @@
+using DBUtility;
+using HRManagementSystemDDD;
+using HRManagementSystem.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +11,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connAESString = builder.Configuration.GetConnectionString("DefaultConnection");
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddScoped<IDataBaseUtility, DataBaseUtility>(provider =>
+    new DataBaseUtility(connectionString));
+
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureLayer();
+
+// µù¥U MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
+
+//AutoMapper
+builder.Services.AddAutoMapper(
+    (serviceProvider, mapperConfiguration) => mapperConfiguration.AddProfiles(new AutoMapper.Profile[]{}),
+    AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
