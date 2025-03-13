@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj" />
-    <ProjectReference Include="..\HRManagementSystem.Infrastructure\HRManagementSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\HRManagementSystemDDD.Infrastructure\HRManagementSystemDDD.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

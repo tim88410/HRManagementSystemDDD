@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using HRManagementSystem.Infrastructure.Models.Leaves;
-using HRManagementSystem.Infrastructure.Repositories.Leaves;
+using HRManagementSystemDDD.Infrastructure.Models.Leaves;
+using HRManagementSystemDDD.Infrastructure.Repositories.Leaves;
 using MediatR;
 
 namespace HRManagementSystemDDD.Application.Queries.Leaves

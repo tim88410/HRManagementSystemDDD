@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using HRManagementSystem.Infrastructure.Models.Leaves;
 using HRManagementSystemDDD.Application.Queries.Leaves;
+using HRManagementSystemDDD.Infrastructure.Models.Leaves;
 
 namespace HRManagementSystemDDD.Application.Queries
 {
@@ -10,6 +10,7 @@ namespace HRManagementSystemDDD.Application.Queries
         {
             CreateMap<LeavesResponse.LeavesInfo, LeavesQuery.LeavesDTO>().ReverseMap();
             CreateMap<LeavesRequest, LeavesQuery.LeavesQueryParameter>().ReverseMap();
+            CreateMap<LeavesResponse.LeavesInfo, Domain.AggregatesModel.LeaveAggregate.Leave>().ReverseMap();
         }
     }
 }

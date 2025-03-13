@@ -1,6 +1,6 @@
 using DBUtility;
 using HRManagementSystemDDD;
-using HRManagementSystem.Infrastructure;
+using HRManagementSystemDDD.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
