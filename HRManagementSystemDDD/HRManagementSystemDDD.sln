@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35806.99 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagementSystemDDD", "HRManagementSystemDDD\HRManagementSystemDDD.csproj", "{A05547AC-0E65-4A65-A983-65867F796A92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A05547AC-0E65-4A65-A983-65867F796A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A05547AC-0E65-4A65-A983-65867F796A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A05547AC-0E65-4A65-A983-65867F796A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9415F2-3D30-4909-9FD4-8F36ABA883B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
