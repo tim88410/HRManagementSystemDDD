@@ -92,5 +92,35 @@ namespace HRManagementSystemDDD.Controllers
         }
 
 
+        /// <summary>
+        /// 刪除Leaves內某筆資料，須注意刪除時Id必不得為0，若Id為0則判定為參數錯誤
+        /// </summary>
+        /// <remarks>
+        /// <code>
+        /// <br/>
+        /// 透過 ReturnCode 判斷狀態:<br/>
+        /// ParamError(2) 參數錯誤<br/>
+        /// DBConnectError(3) DB連線失敗<br/>
+        /// OperationSuccessful(5) 刪除成功<br/>
+        /// </code>
+        /// </remarks>
+        [ApiResult]
+        [APIError]
+        [HttpDelete]
+        [Route("v1/Leaves")]
+        public async Task<IActionResult> Delete(int Id, int userId)
+        {
+            if (!ModelState.IsValid || Id == 0)
+            {
+                throw new APIError.ParamError();
+            }
+            var result = await mediator.Send(new DeleteLeaveCommand { Id = Id, UserId = userId });
+
+            if (result == ErrorCode.KErrDBError)
+            {
+                throw new APIError.DBConnectError();
+            }
+            return Ok();
+        }
     }
 }
