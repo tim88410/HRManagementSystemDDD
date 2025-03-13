@@ -91,6 +91,73 @@ namespace HRManagementSystemDDD.Controllers
             return Ok(result.FirstOrDefault());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// <code>
+        /// Id:流水號，供編輯時選定單筆Id
+        /// <br/>
+        /// 透過 ReturnCode 判斷狀態:<br/>
+        /// ParamError(2) 參數錯誤<br/>
+        /// DBConnectError(3) DB連線失敗<br/>
+        /// OperationSuccessful(5) 查詢成功<br/>
+        /// </code>
+        /// </remarks>
+        [ApiResult]
+        [APIError]
+        [HttpPost]
+        [Route("v1/Leaves")]
+        public async Task<IActionResult> Post([FromBody] UpdateLeaveCommand request)
+        {
+            if (!ModelState.IsValid || request.Id > 0)
+            {
+                throw new APIError.ParamError();
+            }
+            var result = await mediator.Send(request);
+
+            if (result == ErrorCode.KErrDBError)
+            {
+                throw new APIError.DBConnectError();
+            }
+            return Ok();
+        }
+
+        /// <summary>
+        /// 針對某筆資料進行修改，須注意修改時Id必不得為0，若Id為0則判定為新增，會回傳參數錯誤
+        /// </summary>
+        /// <remarks>
+        /// <code>
+        /// Id:流水號，供編輯時選定單筆Id
+        /// <br/>
+        /// 透過 ReturnCode 判斷狀態:<br/>
+        /// ParamError(2) 參數錯誤<br/>
+        /// DBConnectError(3) DB連線失敗<br/>
+        /// OperationSuccessful(5) 修改成功<br/>
+        /// </code>
+        /// </remarks>
+        [ApiResult]
+        [APIError]
+        [HttpPut]
+        [Route("v1/Leaves")]
+        public async Task<IActionResult> Put([FromBody] UpdateLeaveCommand request)
+        {
+            if (!ModelState.IsValid || request.Id == 0)
+            {
+                throw new APIError.ParamError();
+            }
+            var result = await mediator.Send(request);
+
+            if (result == (int)ErrorCode.ReturnCode.DataNotFound)
+            {
+                throw new APIError.DataNotFound();
+            }
+            if (result == ErrorCode.KErrDBError)
+            {
+                throw new APIError.DBConnectError();
+            }
+            return Ok();
+        }
 
         /// <summary>
         /// 刪除Leaves內某筆資料，須注意刪除時Id必不得為0，若Id為0則判定為參數錯誤
